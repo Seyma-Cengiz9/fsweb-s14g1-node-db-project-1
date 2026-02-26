@@ -18,14 +18,13 @@ async function checkAccountId(req, res, next) {
 function checkAccountPayload(req, res, next) {
   const { name, budget } = req.body;
 
-  // name veya budget tanımlı değilse
+  
   if (name === undefined || budget === undefined) {
     return res.status(400).json({ message: 'name and budget are required' });
   }
 
   const trimmedName = String(name).trim();
 
-  // trim sonrası isim uzunluğu
   if (trimmedName.length < 3 || trimmedName.length > 100) {
     return res
       .status(400)
@@ -51,14 +50,12 @@ function checkAccountPayload(req, res, next) {
       .json({ message: 'budget of account must be a number' });
   }
 
-  // aralık kontrolü
   if (budgetNum < 0 || budgetNum > 1000000) {
     return res
       .status(400)
       .json({ message: 'budget of account is too large or too small' });
   }
 
-  // normalize ederek route'a bırak
   req.body.name = trimmedName;
   req.body.budget = budgetNum;
 
