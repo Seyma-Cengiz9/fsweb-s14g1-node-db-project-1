@@ -1,21 +1,27 @@
-const getAll = () => {
-  // KODLAR BURAYA
+const db = require('../../data/db-config');
+
+async function getAll() {
+  return db('accounts');
 }
 
-const getById = id => {
-  // KODLAR BURAYA
+async function getById(id) {
+  return db('accounts').where('id', id).first();
 }
 
-const create = account => {
-  // KODLAR BURAYA
+async function create(account) {
+  const [id] = await db('accounts').insert(account);
+  return getById(id);
 }
 
-const updateById = (id, account) => {
-  // KODLAR BURAYA
+async function updateById(id, changes) {
+  await db('accounts').where('id', id).update(changes);
+  return getById(id);
 }
 
-const deleteById = id => {
-  // KODLAR BURAYA
+async function deleteById(id) {
+  const account = await getById(id);
+  await db('accounts').where('id', id).delete();
+  return account;
 }
 
 module.exports = {
@@ -24,4 +30,4 @@ module.exports = {
   create,
   updateById,
   deleteById,
-}
+};
