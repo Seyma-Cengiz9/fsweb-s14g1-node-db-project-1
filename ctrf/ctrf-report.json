@@ -10,8 +10,8 @@
       "pending": 0,
       "skipped": 0,
       "other": 0,
-      "start": 1772140027467,
-      "stop": 1772140027899
+      "start": 1772140314123,
+      "stop": 1772140314548
     },
     "tests": [
       {
@@ -38,7 +38,7 @@
       },
       {
         "name": "server.js [GET] /api/accounts [2] gets the empty array if there are no accounts",
-        "duration": 3,
+        "duration": 4,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -60,7 +60,7 @@
       },
       {
         "name": "server.js [GET] /api/accounts/:id [4] responds with a 404 if the id does not exist",
-        "duration": 2,
+        "duration": 3,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -159,7 +159,7 @@
       },
       {
         "name": "server.js [POST] /api/accounts [13] responds with a 400 and proper error if name already exists in the db",
-        "duration": 3,
+        "duration": 2,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -181,17 +181,6 @@
       },
       {
         "name": "server.js [PUT] /api/accounts/:id [15] responds with a 200 and the newly updated account",
-        "duration": 3,
-        "status": "passed",
-        "rawStatus": "passed",
-        "type": "unit",
-        "filePath": "/Users/seymaerdagi/fsweb-s14g1-node-db-project-1/codegrade_mvp.test.js",
-        "retries": 0,
-        "flaky": false,
-        "suite": "codegrade_mvp.test.js > server.js > [PUT] /api/accounts/:id"
-      },
-      {
-        "name": "server.js [PUT] /api/accounts/:id [16] responds with a 404 if the id does not exist",
         "duration": 2,
         "status": "passed",
         "rawStatus": "passed",
@@ -202,8 +191,19 @@
         "suite": "codegrade_mvp.test.js > server.js > [PUT] /api/accounts/:id"
       },
       {
+        "name": "server.js [PUT] /api/accounts/:id [16] responds with a 404 if the id does not exist",
+        "duration": 3,
+        "status": "passed",
+        "rawStatus": "passed",
+        "type": "unit",
+        "filePath": "/Users/seymaerdagi/fsweb-s14g1-node-db-project-1/codegrade_mvp.test.js",
+        "retries": 0,
+        "flaky": false,
+        "suite": "codegrade_mvp.test.js > server.js > [PUT] /api/accounts/:id"
+      },
+      {
         "name": "server.js [PUT] /api/accounts/:id [17] responds with a 400 and proper error if name or budget are undefined",
-        "duration": 7,
+        "duration": 4,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -225,7 +225,7 @@
       },
       {
         "name": "server.js [PUT] /api/accounts/:id [19] responds with a 400 and proper error if budget cannot be coerced into a number",
-        "duration": 4,
+        "duration": 7,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -236,7 +236,7 @@
       },
       {
         "name": "server.js [PUT] /api/accounts/:id [20] responds with a 400 and proper error if budget is negative or too big",
-        "duration": 4,
+        "duration": 3,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -247,7 +247,7 @@
       },
       {
         "name": "server.js [DELETE] /api/accounts/:id [21] can delete the correct account",
-        "duration": 3,
+        "duration": 4,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
@@ -269,7 +269,7 @@
       },
       {
         "name": "server.js [DELETE] /api/accounts/:id [23] responds with \"account not found\" if the id does not exist",
-        "duration": 2,
+        "duration": 3,
         "status": "passed",
         "rawStatus": "passed",
         "type": "unit",
